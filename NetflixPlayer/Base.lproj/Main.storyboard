@@ -19,9 +19,75 @@
                         <subviews>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-o7-LOn">
                                 <rect key="frame" x="0.0" y="59" width="393" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="SZY-zn-g5f" userLabel="Controls">
+                                        <rect key="frame" x="127.66666666666669" y="130" width="138" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gobackward.10" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yVG-dQ-Pwo">
+                                                <rect key="frame" x="0.0" y="-1" width="40" height="40.666666666666664"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="eZb-1z-R6G"/>
+                                                    <constraint firstAttribute="width" constant="40" id="s2a-aa-Nh8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Sw8-Fx-b2u">
+                                                <rect key="frame" x="48.999999999999986" y="2" width="40" height="36"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="8ct-Pn-eoK"/>
+                                                    <constraint firstAttribute="width" constant="40" id="DEQ-hA-H6c"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goforward.10" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oeN-af-fvh">
+                                                <rect key="frame" x="97.999999999999986" y="-1" width="40.000000000000014" height="40.666666666666664"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="OIi-gE-QIc"/>
+                                                    <constraint firstAttribute="width" constant="40" id="v3B-ZK-3pz"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-EK-tO7" userLabel="Timer">
+                                        <rect key="frame" x="20" y="260" width="353" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cs-fw-mKZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="fu0-Iq-e7M"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yMw-6R-pQm">
+                                                <rect key="frame" x="28" y="0.0" width="297" height="31"/>
+                                                <color key="minimumTrackTintColor" systemColor="systemPinkColor"/>
+                                                <color key="maximumTrackTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                <color key="thumbTintColor" systemColor="systemPinkColor"/>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awy-uS-7XZ">
+                                                <rect key="frame" x="323" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="7zs-xf-5PN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gJu-EK-tO7" secondAttribute="bottom" constant="10" id="DQ6-9f-vsR"/>
                                     <constraint firstAttribute="height" constant="300" id="FZm-P9-VkK"/>
+                                    <constraint firstItem="SZY-zn-g5f" firstAttribute="centerX" secondItem="7yp-o7-LOn" secondAttribute="centerX" id="Tsz-3Q-ZHw"/>
+                                    <constraint firstAttribute="trailing" secondItem="gJu-EK-tO7" secondAttribute="trailing" constant="20" id="bkj-5n-172"/>
+                                    <constraint firstItem="SZY-zn-g5f" firstAttribute="centerY" secondItem="7yp-o7-LOn" secondAttribute="centerY" id="f6G-UG-XER"/>
+                                    <constraint firstItem="gJu-EK-tO7" firstAttribute="leading" secondItem="7yp-o7-LOn" secondAttribute="leading" constant="20" id="nqq-Ui-DPB"/>
+                                    <constraint firstItem="gJu-EK-tO7" firstAttribute="centerX" secondItem="7yp-o7-LOn" secondAttribute="centerX" id="sqw-g5-p9D"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -34,18 +100,38 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="controlsStack" destination="SZY-zn-g5f" id="HH6-0g-9qy"/>
+                        <outlet property="currentTime" destination="8Cs-fw-mKZ" id="njR-2h-nMJ"/>
+                        <outlet property="playBackward" destination="yVG-dQ-Pwo" id="dB8-DW-7u5"/>
+                        <outlet property="playForward" destination="oeN-af-fvh" id="X6x-rl-86g"/>
+                        <outlet property="playPause" destination="Sw8-Fx-b2u" id="iVo-L8-ENA"/>
                         <outlet property="playerHeight" destination="FZm-P9-VkK" id="OOA-S2-2ra"/>
+                        <outlet property="slider" destination="yMw-6R-pQm" id="RFL-A9-spF"/>
+                        <outlet property="timerStack" destination="gJu-EK-tO7" id="DnD-D9-Xf7"/>
+                        <outlet property="totalTime" destination="awy-uS-7XZ" id="aKA-yP-wdC"/>
                         <outlet property="videoPlayerView" destination="7yp-o7-LOn" id="M92-LP-fze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="4"/>
+            <point key="canvasLocation" x="-819" y="-111"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gobackward.10" catalog="system" width="119" height="128"/>
+        <image name="goforward.10" catalog="system" width="119" height="128"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
