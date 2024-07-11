@@ -46,6 +46,13 @@ class PlayerViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var fullScreenImageView: UIImageView! {
+        didSet {
+            self.fullScreenImageView.isUserInteractionEnabled = true
+            self.fullScreenImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleFullScreen)))
+        }
+    }
+
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
     private var timeObserver: Any?
@@ -68,15 +75,13 @@ class PlayerViewController: UIViewController {
         super.willTransition(to: newCollection, with: coordinator)
         guard let windowOrientation else { return }
 
-        if #available(iOS 16.0, *) {
-            if windowOrientation.isPortrait {
-                playerHeight.constant = 300
-            } else {
-                playerHeight.constant = self.view.layer.bounds.height
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.playerLayer?.frame = self.videoPlayerView.bounds
-            }
+        if windowOrientation.isPortrait {
+            playerHeight.constant = 300
+        } else {
+            playerHeight.constant = self.view.layer.bounds.height
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.playerLayer?.frame = self.videoPlayerView.bounds
         }
 
     }
@@ -169,6 +174,26 @@ class PlayerViewController: UIViewController {
                     self.seekSlider = false
                 }
             })
+        }
+    }
+
+    @objc
+    private func toggleFullScreen() {
+        if #available(iOS 16.0, *) {
+            guard let windowScene = view.window?.windowScene else { return }
+            if windowScene.interfaceOrientation == .portrait {
+                windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape))
+            } else {
+                windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
+            }
+        } else {
+            if UIDevice.current.orientation == .portrait {
+                let orientation = UIInterfaceOrientation.landscapeRight.rawValue
+                UIDevice.current.setValue(orientation, forKey: "orientation")
+            } else {
+                let orientation = UIInterfaceOrientation.portrait.rawValue
+                UIDevice.current.setValue(orientation, forKey: "orientation")
+            }
         }
     }
 }
