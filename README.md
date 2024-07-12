@@ -11,4 +11,4 @@ A player similar to one we have on netflix or other OTT platforms.
 - .plist file
 
 ## Recordings
-| <video src="https://github.com/user-attachments/assets/01e40aea-4910-492b-a856-892a6b085b0d"> |
+<video src="https://github.com/user-attachments/assets/01e40aea-4910-492b-a856-892a6b085b0d">
